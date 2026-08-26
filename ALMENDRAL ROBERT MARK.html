@@ -1,0 +1,1225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Robert Mark M. Almendral | My Portfolio</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7f4;
+            color: #173c2d;
+        }
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+            height: 75px;
+            background: #174936;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 0 7%;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+        }
+
+        .logo {
+            color: white;
+            font-size: 27px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #8fc9a3;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+
+            padding: 11px 15px;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            border-radius: 8px;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            background: #39745a;
+        }
+
+        /* ================= HOME ================= */
+
+        #home {
+            min-height: calc(100vh - 75px);
+
+            background:
+                radial-gradient(
+                    circle at 85% 20%,
+                    #3d765d 0%,
+                    transparent 27%
+                ),
+                linear-gradient(
+                    135deg,
+                    #123d2e,
+                    #1d5741
+                );
+
+            color: white;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 70px 8%;
+
+            gap: 50px;
+
+            overflow: hidden;
+        }
+
+        .home-text {
+            max-width: 610px;
+        }
+
+        .portfolio-title {
+            color: #9dd1ac;
+
+            font-size: 15px;
+            font-weight: bold;
+
+            letter-spacing: 4px;
+
+            margin-bottom: 20px;
+        }
+
+        .home-text h1 {
+            font-size: 60px;
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        .home-text h1 span {
+            color: #8dcc9e;
+        }
+
+        .home-text p {
+            color: #d9e9df;
+
+            font-size: 16px;
+            line-height: 1.8;
+
+            max-width: 570px;
+        }
+
+        /* ================= SOCIALS ================= */
+
+        .socials {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            margin-top: 25px;
+        }
+
+        .socials a {
+            width: 42px;
+            height: 42px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: rgba(255,255,255,0.12);
+
+            color: white;
+
+            text-decoration: none;
+
+            font-size: 18px;
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .socials a:hover {
+            background: #80bd91;
+
+            color: #123d2e;
+
+            transform: translateY(-4px);
+        }
+
+        .email-text {
+            color: #d9e9df;
+            font-size: 14px;
+        }
+
+        /* ================= PHOTO ================= */
+
+        .photo-container {
+            width: 480px;
+            height: 550px;
+
+            position: relative;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .photo-ring {
+            position: absolute;
+
+            width: 450px;
+            height: 525px;
+
+            border: 2px solid rgba(139,204,158,0.7);
+
+            border-radius: 50% 50% 45% 45%;
+
+            transform: rotate(-5deg);
+        }
+
+        .photo-ring-two {
+            position: absolute;
+
+            width: 425px;
+            height: 505px;
+
+            border: 2px solid rgba(139,204,158,0.25);
+
+            border-radius: 50% 50% 45% 45%;
+
+            transform: rotate(5deg);
+        }
+
+        .photo {
+            width: 365px;
+            height: 480px;
+
+            border-radius: 50% 50% 35px 35px;
+
+            overflow: hidden;
+
+            border: 8px solid white;
+
+            box-shadow:
+                0 25px 60px rgba(0,0,0,0.35);
+
+            position: relative;
+
+            z-index: 2;
+
+            background: #315e4c;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            object-position: center 55%;
+
+            display: block;
+
+            image-rendering: auto;
+        }
+
+        /* ================= FLOATING CARDS ================= */
+
+        .floating-card {
+            position: absolute;
+
+            z-index: 5;
+
+            background: #174936;
+
+            color: white;
+
+            border: 1px solid #70a986;
+
+            border-radius: 14px;
+
+            padding: 14px 18px;
+
+            box-shadow:
+                0 15px 35px rgba(0,0,0,0.25);
+
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .floating-one {
+            top: 55px;
+            right: -5px;
+        }
+
+        .floating-two {
+            bottom: 65px;
+            left: -20px;
+        }
+
+        /* ================= ABOUT ================= */
+
+        #about {
+            background: #f7f9f6;
+            padding: 90px 9%;
+        }
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+        .section-label {
+            color: #4e8167;
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            letter-spacing: 3px;
+
+            margin-bottom: 10px;
+        }
+
+        .about-title {
+            font-size: 42px;
+
+            line-height: 1.15;
+
+            margin-bottom: 25px;
+        }
+
+        .about-title span {
+            color: #4d8065;
+        }
+
+        .about-text p {
+            color: #63776d;
+
+            line-height: 1.8;
+
+            margin-bottom: 17px;
+        }
+
+        /* ================= SKILLS ================= */
+
+        .skills-box {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 20px;
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,0.06);
+
+            border: 1px solid #dce7df;
+        }
+
+        .skills-box h3 {
+            margin-bottom: 20px;
+            font-size: 22px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill {
+            background: #e7f1ea;
+
+            color: #285b43;
+
+            padding: 10px 15px;
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        /* ================= FILE SECTIONS ================= */
+
+        .file-section {
+            padding: 75px 8%;
+
+            min-height: 420px;
+
+            background: #123d2e;
+
+            color: white;
+        }
+
+        .file-section:nth-of-type(even) {
+            background: #174936;
+        }
+
+        .file-header {
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 30px;
+
+            margin-bottom: 30px;
+        }
+
+        .file-header h2 {
+            font-size: 40px;
+
+            margin-bottom: 7px;
+        }
+
+        .file-header p {
+            color: #bdd2c5;
+        }
+
+        .add-file {
+            background: #62a875;
+
+            color: white;
+
+            padding: 13px 20px;
+
+            border-radius: 9px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .add-file:hover {
+            background: #80c391;
+
+            transform: translateY(-2px);
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        .file-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .empty {
+            padding: 35px;
+
+            text-align: center;
+
+            border: 2px dashed #477c61;
+
+            border-radius: 15px;
+
+            color: #a9c1b3;
+
+            background: rgba(255,255,255,0.04);
+        }
+
+        .file-item {
+            background: rgba(255,255,255,0.06);
+
+            padding: 17px;
+
+            border-radius: 13px;
+
+            border: 1px solid #47745e;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            gap: 20px;
+        }
+
+        .file-name {
+            font-weight: bold;
+            color: #e8f4ec;
+        }
+
+        .file-size {
+            color: #9db6a8;
+
+            font-size: 12px;
+
+            margin-top: 4px;
+        }
+
+        .file-buttons {
+            display: flex;
+            gap: 8px;
+        }
+
+        .open-btn,
+        .delete-btn {
+            border: none;
+
+            padding: 8px 13px;
+
+            border-radius: 7px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+        .open-btn {
+            background: #315f49;
+            color: #bce2c7;
+        }
+
+        .delete-btn {
+            background: #633d3d;
+            color: #ffb4b4;
+        }
+
+        .open-btn:hover {
+            background: #477d60;
+        }
+
+        .delete-btn:hover {
+            background: #804747;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background: #0e3024;
+
+            color: #b9cbc0;
+
+            padding: 25px 8%;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 13px;
+        }
+
+        /* ================= MOBILE ================= */
+
+        @media (max-width: 900px) {
+
+            #home {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 60px;
+            }
+
+            .socials {
+                justify-content: center;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 0 3%;
+            }
+
+            .logo {
+                font-size: 20px;
+            }
+
+            .nav-links {
+                gap: 0;
+            }
+
+            .nav-links a {
+                padding: 7px;
+                font-size: 9px;
+            }
+
+            .home-text h1 {
+                font-size: 42px;
+            }
+
+            .photo-container {
+                width: 330px;
+                height: 430px;
+            }
+
+            .photo {
+                width: 285px;
+                height: 375px;
+            }
+
+            .photo-ring {
+                width: 330px;
+                height: 410px;
+            }
+
+            .photo-ring-two {
+                width: 310px;
+                height: 390px;
+            }
+
+            .file-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .file-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .file-buttons {
+                width: 100%;
+            }
+
+            .open-btn,
+            .delete-btn {
+                flex: 1;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        RM<span>.</span>
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">HOME</a>
+        </li>
+
+        <li>
+            <a href="#quiz">QUIZ</a>
+        </li>
+
+        <li>
+            <a href="#laboratory">LABORATORY</a>
+        </li>
+
+        <li>
+            <a href="#exam">EXAM</a>
+        </li>
+
+        <li>
+            <a href="#assignment">ASSIGNMENT</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+<!-- ================= HOME ================= -->
+
+<section id="home">
+
+    <div class="home-text">
+
+        <div class="portfolio-title">
+            MY PORTFOLIO
+        </div>
+
+        <h1>
+            Hello, I'm
+            <span>Robert Mark</span><br>
+            M. Almendral.
+        </h1>
+
+        <p>
+            I'm a student who enjoys learning technology,
+            creating websites, exploring UI/UX design,
+            and turning ideas into simple and useful
+            digital experiences.
+        </p>
+
+        <div class="socials">
+
+            <a
+                href="https://www.facebook.com/mac.almendral.13/"
+                target="_blank"
+                title="Facebook">
+
+                f
+
+            </a>
+
+ <a
+        href="mailto:rmmalmendral@pcu.edu.ph"
+        title="Email">
+
+        @
+
+    </a>
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= YOUR PICTURE ================= -->
+
+<div class="photo-container">
+
+    <div class="photo-ring"></div>
+
+    <div class="photo-ring-two"></div>
+
+    <div class="photo">
+
+        <img
+            src="00b88c6c-c91d-47d0-8d9b-90a19dee1624.jpg"
+            alt="Robert Mark M. Almendral">
+
+    </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="about-grid">
+
+        <div class="about-text">
+
+            <div class="section-label">
+                ABOUT ME
+            </div>
+
+            <h2 class="about-title">
+                Building skills,
+                <span>one project at a time.</span>
+            </h2>
+
+            <p>
+                I am a dedicated student who enjoys
+                exploring new ideas and turning them
+                into creative digital solutions.
+            </p>
+
+            <p>
+                I enjoy building websites, designing
+                user interfaces, and solving problems
+                through code.
+            </p>
+
+            <p>
+                This portfolio contains my academic
+                works, activities, projects, and
+                experiences.
+            </p>
+
+        </div>
+
+
+        <div class="skills-box">
+
+            <h3>
+                Skills & Interests
+            </h3>
+
+            <div class="skills">
+
+                <div class="skill">HTML</div>
+
+                <div class="skill">CSS</div>
+
+                <div class="skill">JavaScript</div>
+
+                <div class="skill">Java</div>
+
+                <div class="skill">UI/UX Design</div>
+
+                <div class="skill">Web Development</div>
+
+                <div class="skill">Git & GitHub</div>
+
+                <div class="skill">Problem Solving</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= QUIZ ================= -->
+
+<section id="quiz" class="file-section">
+
+    <div class="file-header">
+
+        <div>
+
+            <div class="section-label">
+                01 / QUIZ
+            </div>
+
+            <h2>Quiz</h2>
+
+            <p>
+                Store your quiz activities and files here.
+            </p>
+
+        </div>
+
+        <label class="add-file">
+
+            + Add File
+
+            <input
+                type="file"
+                multiple
+                onchange="uploadFile(event,'quiz')">
+
+        </label>
+
+    </div>
+
+    <div id="quiz-list" class="file-list">
+
+        <div class="empty">
+
+            No files yet.<br>
+
+            Click "+ Add File" to add your quiz files.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= LABORATORY ================= -->
+
+<section id="laboratory" class="file-section">
+
+    <div class="file-header">
+
+        <div>
+
+            <div class="section-label">
+                02 / LABORATORY
+            </div>
+
+            <h2>Laboratory</h2>
+
+            <p>
+                Keep your laboratory exercises and outputs here.
+            </p>
+
+        </div>
+
+        <label class="add-file">
+
+            + Add File
+
+            <input
+                type="file"
+                multiple
+                onchange="uploadFile(event,'laboratory')">
+
+        </label>
+
+    </div>
+
+    <div id="laboratory-list" class="file-list">
+
+        <div class="empty">
+
+            No files yet.<br>
+
+            Click "+ Add File" to add laboratory files.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= EXAM ================= -->
+
+<section id="exam" class="file-section">
+
+    <div class="file-header">
+
+        <div>
+
+            <div class="section-label">
+                03 / EXAM
+            </div>
+
+            <h2>Exam</h2>
+
+            <p>
+                Save your exam-related files and activities here.
+            </p>
+
+        </div>
+
+        <label class="add-file">
+
+            + Add File
+
+            <input
+                type="file"
+                multiple
+                onchange="uploadFile(event,'exam')">
+
+        </label>
+
+    </div>
+
+    <div id="exam-list" class="file-list">
+
+        <div class="empty">
+
+            No files yet.<br>
+
+            Click "+ Add File" to add exam files.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= ASSIGNMENT ================= -->
+
+<section id="assignment" class="file-section">
+
+    <div class="file-header">
+
+        <div>
+
+            <div class="section-label">
+                04 / ASSIGNMENT
+            </div>
+
+            <h2>Assignment</h2>
+
+            <p>
+                Upload, open, and manage your assignments.
+            </p>
+
+        </div>
+
+        <label class="add-file">
+
+            + Add File
+
+            <input
+                type="file"
+                multiple
+                onchange="uploadFile(event,'assignment')">
+
+        </label>
+
+    </div>
+
+    <div id="assignment-list" class="file-list">
+
+        <div class="empty">
+
+            No files yet.<br>
+
+            Click "+ Add File" to add your assignments.
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Robert Mark M. Almendral
+    </p>
+
+    <p>
+        Designed & Built with HTML, CSS & JavaScript
+    </p>
+
+</footer>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+    let files = {
+        quiz: [],
+        laboratory: [],
+        exam: [],
+        assignment: []
+    };
+
+
+    function uploadFile(event, category) {
+
+        const selectedFiles = event.target.files;
+
+        if (!selectedFiles.length) {
+            return;
+        }
+
+        for (let file of selectedFiles) {
+
+            files[category].push({
+
+                id: Date.now() + Math.random(),
+
+                name: file.name,
+
+                size: file.size,
+
+                file: file
+
+            });
+
+        }
+
+        displayFiles(category);
+
+        event.target.value = "";
+    }
+
+
+    function displayFiles(category) {
+
+        const list =
+            document.getElementById(category + "-list");
+
+        list.innerHTML = "";
+
+
+        if (files[category].length === 0) {
+
+            list.innerHTML = `
+
+                <div class="empty">
+
+                    No files yet.<br>
+
+                    Click "+ Add File"
+                    to add your files.
+
+                </div>
+
+            `;
+
+            return;
+        }
+
+
+        files[category].forEach(function(item) {
+
+            const div =
+                document.createElement("div");
+
+            div.className = "file-item";
+
+            div.innerHTML = `
+
+                <div>
+
+                    <div class="file-name">
+                        📄 ${item.name}
+                    </div>
+
+                    <div class="file-size">
+                        ${formatSize(item.size)}
+                    </div>
+
+                </div>
+
+                <div class="file-buttons">
+
+                    <button
+                        class="open-btn"
+                        onclick="openFile(
+                            '${category}',
+                            '${item.id}'
+                        )">
+
+                        Open
+
+                    </button>
+
+                    <button
+                        class="delete-btn"
+                        onclick="deleteFile(
+                            '${category}',
+                            '${item.id}'
+                        )">
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            `;
+
+            list.appendChild(div);
+
+        });
+
+    }
+
+
+    function openFile(category, id) {
+
+        const item =
+            files[category].find(
+                file =>
+                    String(file.id) === String(id)
+            );
+
+        if (!item) {
+            return;
+        }
+
+        const url =
+            URL.createObjectURL(item.file);
+
+        window.open(url, "_blank");
+    }
+
+
+    function deleteFile(category, id) {
+
+        const item =
+            files[category].find(
+                file =>
+                    String(file.id) === String(id)
+            );
+
+        if (!item) {
+            return;
+        }
+
+        const confirmDelete =
+            confirm(
+                "Are you sure you want to delete " +
+                item.name +
+                "?"
+            );
+
+        if (!confirmDelete) {
+            return;
+        }
+
+        files[category] =
+            files[category].filter(
+                file =>
+                    String(file.id) !== String(id)
+            );
+
+        displayFiles(category);
+    }
+
+
+    function formatSize(bytes) {
+
+        if (bytes < 1024) {
+            return bytes + " B";
+        }
+
+        if (bytes < 1024 * 1024) {
+
+            return (
+                bytes / 1024
+            ).toFixed(1) + " KB";
+
+        }
+
+        return (
+            bytes / (1024 * 1024)
+        ).toFixed(1) + " MB";
+    }
+
+</script>
+
+
+</body>
+</html>
