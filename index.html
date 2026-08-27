@@ -525,6 +525,10 @@
             background: #477d60;
         }
 
+        .file-buttons a.open-btn {
+            cursor: pointer;
+        }
+
         .delete-btn:hover {
             background: #804747;
         }
@@ -898,11 +902,37 @@
 
     <div id="laboratory-list" class="file-list">
 
-        <div class="empty">
+        <div class="file-item">
 
-            No files yet.<br>
+            <div>
 
-            Click "+ Add File" to add laboratory files.
+                <div class="file-name">
+                    📄 ALMENDRAL-LAB1-ELECTIVE.pdf
+                </div>
+
+                <div class="file-size">
+                    Laboratory Activity 1 — Virtual Machine Setup (Ubuntu Desktop)
+                </div>
+
+            </div>
+
+            <div class="file-buttons">
+
+                <button
+                    class="open-btn"
+                    onclick="window.open('ALMENDRAL-LAB1-ELECTIVE.pdf', '_blank')">
+                    Open
+                </button>
+
+                <a
+                    class="open-btn"
+                    href="ALMENDRAL-LAB1-ELECTIVE.pdf"
+                    download="ALMENDRAL-LAB1-ELECTIVE.pdf"
+                    style="text-decoration:none; display:flex; align-items:center; justify-content:center;">
+                    Download
+                </a>
+
+            </div>
 
         </div>
 
